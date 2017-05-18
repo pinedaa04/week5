@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Table Database</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="objList.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Cities You've Been To</h1>
+    </header>
+    
+    <div id="cityTable">
+     <table>
+      <thead>
+        <tr>
+          <th>City Name</th>
+          <th>State Located</th>
+        </tr>
+       </thead>
+       <tbody id="tBody">
+         <tr id="tRow">
+           <td id="tCity">
+           </td>
+           <td id="tState">
+           </td>
+         </tr>
+       </tbody>
+    </table>
+      </div>
+    <form>
+      <button type="button" id="addItemButton">Add Item</button>  
+    </form>
+    
+    <div>
+      <form id="cityForm">
+          City<input type="textbox" id="city">
+          State<input type="textbox" id="state">
+        <input type="submit" value="Submit" id="submit">
+      </form>
+    </div>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+      <script src="script.js"></script>
+  </body>
+</html>
