@@ -1,32 +1,37 @@
 $(document).ready(function () {
-  var i = 0, e = event, arr = [i], tBody = $('#tBody'), addButton = $('#addItemButton'), tRow = $('#tRow'), cityForm = $('#cityForm'), cityTable = $('#cityTable'), submit = $('#submit'), tCity = $('#tCity'), tState = $('tState'), city = "city", state = "state";
+  var i = 0, e = event, tBody = $('#tBody'), addButton = $('#addItemButton'), cityForm = $('#cityForm'), cityTable = $('#cityTable'), submit = $('#submit'), city = $('#city'), state = $('#state'), count = 0;
+  var arr = [];
+  var mCity;
+  var mState;
   
-
   cityForm.hide();
   addButton.on("click", function (e) {
     event.preventDefault();
     cityForm.show();
     cityTable.hide();
   });
-    
+  
+  function updateArray(city, state) {
+    arr.push({mCity: city, mState: state});
+  }
+  function populateTable() {
+    $('#cityTable tbody').html('<tr></tr>'); 
+    console.log("arr size " + arr.length);
+    for (i = 0; i < arr.length; i++) {
+      // this query finds the child tbody of the cityTable
+      $('#cityTable tbody').append('<tr><td>' + arr[i].mCity + '</td>' + '<td>' + arr[i].mState + '</td></tr>'); 
+//      
+      count++;
+    }
+  }
 
-//    $countMsg = $('li[id="countMsg"]').append("Count: ");
-  submit.on("click", function (event) {
-    city.val();
-    country.val();
-    console.log("Working");
-    function updateArray(city, state) {
-      arr.push({tCity: city, tState: state}); //ask
-    }
-    cityTable.show();
+  submit.on("click", function (e) {
+    e.preventDefault();
+    console.log(":::" + city.val());
+    updateArray(city.val(), state.val());
+    populateTable();
     cityForm.hide();
-    function populateTable() {
-      for (i; i <= arr.length; i++) {
-        var insert = tRow.insertCell(0);
-        insert.append(city, country);
-      
-      }
-    }
+    cityTable.show();
   });
   
 });
